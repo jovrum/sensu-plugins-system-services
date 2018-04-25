@@ -13,12 +13,6 @@ rvm:
 - 2.2
 - 2.3.0
 - 2.4.1
-notifications:
-  email:
-    recipients:
-    - sensu-plugin@sensu-plugins.io
-    on_success: change
-    on_failure: always
 script:
   - gem build sensu-plugins-system-services.gemspec
   - gem install sensu-plugins-system-services-*.gem
