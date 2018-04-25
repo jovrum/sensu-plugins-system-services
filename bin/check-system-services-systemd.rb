@@ -1,6 +1,6 @@
 #! /usr/bin/env ruby
 # encoding: UTF-8
-#
+
 # check-system-services-systemd
 #
 # DESCRIPTION:
@@ -37,14 +37,14 @@ class CheckSystemServicesSystemd < Sensu::Plugin::Check::CLI
     object.introspect
 
     critical_services = config[:critical_services]
-      .split(',')
-      .map { |name| name.include?('.') ? name : "#{name}.service" }
-      .to_set
+                        .split(',')
+                        .map { |name| name.include?('.') ? name : "#{name}.service" }
+                        .to_set
 
     failing_units = object.ListUnits.first
-      .select { |name, desc, load_state, active_state| active_state == 'failed' }
-      .map { |name, desc, load_state, active_state| name }
-      .to_set
+                          .select { |_name, _desc, _load_state, active_state| active_state == 'failed' }
+                          .map { |name, _desc, _load_state, _active_state| name }
+                          .to_set
 
     if failing_units.empty?
       ok
