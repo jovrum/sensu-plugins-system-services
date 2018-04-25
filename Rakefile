@@ -13,7 +13,7 @@ require 'kitchen/rake_tasks'
 YARD::Rake::YardocTask.new do |t|
   OTHER_PATHS = %w[].freeze
   t.files = ['lib/**/*.rb', 'bin/**/*.rb', OTHER_PATHS]
-  t.options = %w[--markup-provider=redcarpet --markup=markdown --main=README.md --files CHANGELOG.md]
+  t.options = %w[--markup-provider=redcarpet --markup=markdown --main=README.md]
 end
 
 RuboCop::RakeTask.new
