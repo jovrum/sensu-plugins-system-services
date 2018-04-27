@@ -30,7 +30,7 @@ Gem::Specification.new do |s| # rubocop:disable Metrics/BlockLength
   s.version                = SensuPluginsSystemServices::Version::VER_STRING
 
   s.add_runtime_dependency 'sensu-plugin', '~> 2.0'
-  s.add_runtime_dependency 'ruby-dbus'
+  s.add_runtime_dependency 'ruby-dbus', '~> 0'
 
   s.add_development_dependency 'bundler',                   '~> 1.15'
   s.add_development_dependency 'github-markup',             '~> 1.3'
@@ -43,7 +43,7 @@ Gem::Specification.new do |s| # rubocop:disable Metrics/BlockLength
   s.add_development_dependency 'redcarpet',                 '~> 3.2'
   s.add_development_dependency 'rspec',                     '~> 3.4'
   s.add_development_dependency 'rubocop',                   '~> 0.49.0'
-  s.add_development_dependency 'serverspec',                '~> 2.36.1'
+  s.add_development_dependency 'serverspec',                '~> 2.36'
   s.add_development_dependency 'test-kitchen',              '~> 1.6'
   s.add_development_dependency 'yard',                      '~> 0.9.11'
 end
